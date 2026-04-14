@@ -1,12 +1,5 @@
 # Lecture 4 Topics (zybook 2.8 - 2.14 )
-# Relational and logical operators
-# Writing boolean expressions
-# Using boolean expressions to make decisions in code (branching)
-# Nested branches
 
-# What are some other relational operators?
-# What are boolean expressions?
-# What is printed by each line?
 
 print("Boolean expressions using relational operators")
 a = 3
