@@ -1,4 +1,5 @@
 # Lecture 4 Topics (zybook 2.8 - 2.14 )
+# Boolean Expressions and how to use them to write programs that make decisions!
 
 
 print("Boolean expressions using relational operators")
