@@ -1,5 +1,5 @@
 # Lecture 6 - Rock Paper Scissors
-# Topics: Problem Decomposition, Testing, if __name__ == "__main__"
+# Topics: Problem Decomposition, Testing, what is a module? and how to write one? if __name__ == "__main__"
 #
 # Learning Objectives:
 # By the end of this lecture you should be able to:
@@ -24,8 +24,10 @@
 #   Same choice = Tie
 #
 # What are the inputs?
+# player's choice: string
 #
 # What is the output?
+# Result of the game! 
 
 
 # ============================================================
@@ -33,8 +35,57 @@
 # ============================================================
 # Before writing any functions, sketch out what the program needs to DO.
 # This tells us what functions we'll need.
+import random
+# Figure out the subproblems --> functions that I will write
+def is_valid_choice(player_choice : str) -> bool:
+    ''' returns True if the player_choice is one of rock, paper, or sciessors, 
+    otherwise return false'''
+    if player_choice == 'rock' or player_choice == 'scissors' or player_choice == 'paper':
+        return True
+    else:
+        return False
 
+def computer_choice()-> str:
+    '''returns a str that randomly selected among the three options '''
+    result = random.randint(1, 3)
+    if result == 1:
+        return "rock"
+    elif result == 2:
+        return "scissors"
+    else:
+        return "paper"
+    
 
+def determine_winner(player: str, computer: str) -> str:
+    ''' return one of the following: "Computer Wins!" or "You win!" or
+    "Its a tie" based on inputs'''
+    if player == computer:
+        return "Its a Tie"
+    elif computer == "rock" and player == "scissors" \
+        or computer == "scissors" and player == "paper" \
+        or computer == "paper" and player == "rock":
+        return "Computer Wins!"
+    else:
+        return "You Win!"
+
+# Main logic 
+# print("__name__ = ", __name__)
+
+if __name__ == "__main__":
+    # Step 1: get the player's choice
+    player = input("Enter your choice (rock, paper, scissors): ")
+    # Step 2: if the choice is not valid , then print an error message and end the program
+    # Step 3: Else if the player's choice is valid, computer picks a choice
+    if not is_valid_choice(player): # input: str, returns a boolean
+        print("Not a valid choice, try again! Inputs are case-sensitive!")
+    else: 
+        computer = computer_choice();
+        # Step 4: Print the choice that computer picked
+        print("Computer picked", computer)
+
+        # Step 5: Determine the winner and print the winner
+        result = determine_winner(player, computer)
+        print(result)
 
 # ============================================================
 # STEP 3: Identify the function stubs from the comments above
