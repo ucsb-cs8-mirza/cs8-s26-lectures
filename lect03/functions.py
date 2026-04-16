@@ -5,7 +5,7 @@ import math
 # Functions : Programming construct
 # Idea is to abstract out the details of your code
 
-# How do I make or write (define) a function?
+# Step 1: How do I make or write a function? Define the function
 # Stub of a function: skeleton of the definition of the function
 def area_of_circle(radius): # radius is a parameter
     ''' returns the area of a circle given the input radius
@@ -16,9 +16,9 @@ def area_of_circle(radius): # radius is a parameter
     # Local variables only exist within the body of the function
     return result
 
-# How do I use the function to compute?
-
+# Step 2: How do I use the function to compute? Call the function
 y = area_of_circle(10) # calling the function
+
 print(y)
 # print(f"area_of_circle(10) = {area_of_circle(10)}")
 # print("area_of_circle(5) = ", area_of_circle(5))

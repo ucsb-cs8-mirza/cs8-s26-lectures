@@ -7,6 +7,8 @@ def tip_return(bill, percent):
 def tip_print(bill, percent):
     '''float, int --> None'''
     print(bill * percent / 100)
+    x = 5 # this line still runs
+    
     
 y = tip_return(100, 15) # y is a float (number)
 z = tip_print(100, 15)  # z is a None (NoneType)
