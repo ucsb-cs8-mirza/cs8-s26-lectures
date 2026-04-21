@@ -16,8 +16,8 @@
 # ============================================================
 # Run each line below in the Python shell and observe type() and len()
 
-item    = 'spam'
-grocery = ['spam', 'milk', 'eggs', 'apple']
+item    = 'spam' # string : sequenec of characters
+grocery = ['spam', 'milk', 'eggs', 'apple'] # list : sequence of any type
 stu1    = ('John', 'Doe', 67024847)
 stu2    = [('John', 'Doe', 67024847), 3.8]
 
@@ -64,15 +64,29 @@ def print_each_char(s):
     # TODO
 
 
-def print_each_element(lst):
+def print_each_element(lst : list):
     '''Print each element of list lst on its own line.'''
-    # TODO
+    # Loop through the elements
+    for element in lst:
+        # body of the for loop
+        print(element, "| ", end="")
+    print("\nEnd of for loop")
+    print("******\n******\n*******")
 
+
+print_each_element(grocery)
 
 # Concept Test — trace this by hand before running:
-#   for x in [1, 2, 3]:
-#       print('Hello' * x)
-# What prints?  A. 1 2 3   B. 'Hello' 3 times   C. Hello / HelloHello / HelloHelloHello   D. Other
+for x in [1, 2, 3]: # x is the loop variable
+    print('Hello' * x) # We can use the loop variable inside the for loop in any expression
+
+# What prints?  
+# A. 1 2 3   
+# B. 'Hello' 3 times  
+# C. Hello  
+#    HelloHello 
+#    HelloHelloHello   
+# D. Other
 
 
 # ============================================================
@@ -87,11 +101,45 @@ def print_each_element(lst):
 def countElements(lst):
     '''Return the number of elements in lst (without using len()).'''
     # TODO
+    if type(lst)!= list:
+        print("Invalid input type")
+        return 0
+    result = 0
+    for element in lst:
+        result +=1
+    return result
 
+# print(grocery)
+# print("My grocery list has", countElements(grocery), "items")
+# print("My grocery list has", countElements(10), "items")
 
 def countOddNumbers(lst):
     '''Return the number of odd numbers in lst.'''
     # TODO
+    result = 0 # Initialize variable outside the loop
+    for element in lst:
+        if element % 2 != 0:
+            result += 1 # result +=1 is just a shorthand for result = result + 1 , accumulating
+    return result # return the answer
+# Accumulator pattern: 
+nums = [10, 15, 2, 3, 3, 3, 3, 3, 3]
+print(nums, "has", countOddNumbers(nums), "odd numbers")
+print(nums, "has", countOddNumbers([]), "odd numbers")
+
+
+def sumOddNumbers(lst):
+    '''Return the sum of all the odd numbers in lst.'''
+    # TODO
+    result = 0 # Initialize variable outside the loop
+    for element in lst:
+        if element % 2 != 0:
+            result += element # result +=1 is just a shorthand for result = result + 1 , accumulating
+    return result # return the answer
+# Accumulator pattern: 
+nums = [10, 1, 3, 2]
+print(nums, "Sum:", sumOddNumbers(nums))
+print(nums, "Sum:", sumOddNumbers([]))
+print(nums, "Sum:", sumOddNumbers([2, 4, 6, 8]))
 
 
 def count(name, letter):
@@ -116,13 +164,35 @@ def isListOfNumbers(lst):
 
 # Concept Test — find the bug:
 #
-# def containsOddNumber(lst):
-#     for x in lst:
-#         if (x % 2 == 1):
-#             return True
-#         else:
-#             return False
-#
+def containsOddNumber(lst):
+    '''returns True if the lst contains an odd number, False otherwise'''
+    # lst = [1, 3, 5] 
+    for x in lst:
+        # Bug is that the funtion terminates too early when it shouldn't
+        if (x % 2 == 1):
+            return True
+        else:
+            return False
+
+# Correct version of the code!
+def containsOddNumber(lst):
+    '''returns True if the lst contains an odd number, False otherwise'''
+    # lst = [2, 4, 6, 8, 10]
+
+    for x in lst:
+        # Bug is that the funtion terminates too early when it shouldn't
+        if (x % 2 == 1):
+            return True        
+    return False
+# No lecture on Thursday! Watch the 
+# Expected!
+# [2, 4, 6, 5] --> True
+# [2, 4, 6, 8, 10] --> False
+# [1, 3, 5] --> True
+# For which input does this return the RIGHT answer?
+# A. [2, 4, 6, 5] -->False    B. [2, 4, 6, 8, 10] -->False (happend to be the right answer!)   
+# C. [1, 3, 5] ---> True! Correct
+
 # For which input does this return the WRONG answer?
 #   A. [1, 2, 3, 4]   B. [2, 3, 4, 1]   C. [3, 4, 1, 2]   D. [3, 3, 3, 3]
 
