@@ -69,11 +69,6 @@ def print_each_element(lst):
     # TODO
 
 
-def print_each_tuple_element(t):
-    '''Print each element of tuple t on its own line.'''
-    # TODO
-
-
 # Concept Test — trace this by hand before running:
 #   for x in [1, 2, 3]:
 #       print('Hello' * x)
@@ -156,11 +151,6 @@ def print_hello_n_times(n):
 
 def countWords(sentence):
     '''Return the number of words in sentence.'''
-    # TODO
-
-
-def countLongWords(sentence, min_len):
-    '''Return the number of words in sentence whose length is greater than min_len.'''
     # TODO
 
 
