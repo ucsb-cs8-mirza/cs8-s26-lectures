@@ -3,12 +3,6 @@
 # Topics: nested loops, accumulator pattern with strings
 
 # ============================================================
-# WARMUP: accumulator pattern review
-# ============================================================
-
-
-
-# ============================================================
 # PART 1: getRectangle — introducing nested loops
 # ============================================================
 # getRectangle(width: int, height: int) -> str returns a string
