@@ -15,6 +15,18 @@
 #              ['O', ' ', ' '],
 #              [' ', ' ', 'X']]
 # E. All of the above
+print("tic tac toe board as a string")
+board_1 = 'X-O\nO--\n--X' 
+# board_1[5] = "X"
+print(board_1)
+# If we choose a string representation, we can't modify the individual elements in the string
+# because string is an immutable type (indivisible!)
+# where a list is a mutable type
+
+print("\ntic tac toe board as a nested list")
+board = [['X', ' ', 'O'], ['O', ' ', ' '], [' ', ' ', 'X']]
+
+#print(board)
 
 
 # ============================================================
@@ -62,7 +74,15 @@ def print_board_v0(board):
     Problem: prints a divider after the LAST row too — can we fix that?
     '''
     # TODO: loop over rows, print each row, always print divider after
+
+    for row in board:
+        for elem in row:
+            print("", elem, "|", end ="")
+        print("\n---+---+---")
+
     return
+
+board[1][1] ="X"
 
 
 # ============================================================
@@ -89,5 +109,5 @@ def print_board(board):
 
 print("--- v0 ---")
 print_board_v0(board)
-print("--- fixed ---")
-print_board(board)
+# print("--- fixed ---")
+# print_board(board)
