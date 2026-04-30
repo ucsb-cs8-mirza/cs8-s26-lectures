@@ -40,20 +40,12 @@ import random
 def is_valid_choice(player_choice : str) -> bool:
     ''' returns True if the player_choice is one of rock, paper, or sciessors, 
     otherwise return false'''
-    if player_choice == 'rock' or player_choice == 'scissors' or player_choice == 'paper':
-        return True
-    else:
-        return False
+    return player_choice in ["rock", "paper", "scissors"]
 
 def computer_choice()-> str:
     '''returns a str that randomly selected among the three options '''
-    result = random.randint(1, 3)
-    if result == 1:
-        return "rock"
-    elif result == 2:
-        return "scissors"
-    else:
-        return "paper"
+    choices = ["rock", "paper", "scissors"]
+    return random.choice(choices)
     
 
 def determine_winner(player: str, computer: str) -> str:
@@ -68,24 +60,30 @@ def determine_winner(player: str, computer: str) -> str:
     else:
         return "You Win!"
 
-# Main logic 
-# print("__name__ = ", __name__)
+def play_rps():
+    ''' Play repeated rounds of the the game until the player quits'''
+    wins = 0
+    losses = 0
+    ties = 0
+    player = input("Enter your choice (rock, paper, scissors) or 'quit': ")
+    while player != 'quit':
+        # play logic
+        if not is_valid_choice(player): # input: str, returns a boolean
+            print("Not a valid choice, try again! Inputs are case-sensitive!")
+        else: 
+            computer = computer_choice()
+            print("Computer picked", computer)
+            result = determine_winner(player, computer)
+            print(result)
+            # Update the scores
+        player = input("Enter your choice (rock, paper, scissors) or 'quit': ")
+    # Print the scores
+
+
 
 if __name__ == "__main__":
-    # Step 1: get the player's choice
-    player = input("Enter your choice (rock, paper, scissors): ")
-    # Step 2: if the choice is not valid , then print an error message and end the program
-    # Step 3: Else if the player's choice is valid, computer picks a choice
-    if not is_valid_choice(player): # input: str, returns a boolean
-        print("Not a valid choice, try again! Inputs are case-sensitive!")
-    else: 
-        computer = computer_choice();
-        # Step 4: Print the choice that computer picked
-        print("Computer picked", computer)
+    play_rps()
 
-        # Step 5: Determine the winner and print the winner
-        result = determine_winner(player, computer)
-        print(result)
 
 # ============================================================
 # STEP 3: Identify the function stubs from the comments above

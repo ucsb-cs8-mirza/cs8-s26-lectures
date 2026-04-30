@@ -61,7 +61,7 @@ matrix = [
 board = [['X', ' ', 'O'],
          ['O', ' ', ' '],
          [' ', ' ', 'X']]
-
+board[1][1] = 'X'
 def print_board_v0(board):
     '''Print the board using a plain for loop.
     Expected output:
@@ -73,8 +73,6 @@ def print_board_v0(board):
     (use . for empty cells)
     Problem: prints a divider after the LAST row too — can we fix that?
     '''
-    # TODO: loop over rows, print each row, always print divider after
-
     for row in board:
         for elem in row:
             print("", elem, "|", end ="")
@@ -84,7 +82,51 @@ def print_board_v0(board):
 
 board[1][1] ="X"
 
+for i in range(3): # [0, 1, 2]
+    print(i, " | " , end = "") # 0 | 1 | 2 |
 
+print()
+
+
+def print_board_v1(board):
+    '''Print the board using a plain for loop.
+    Expected output:
+     X | . | O
+    ---+---+---
+     O | . | .
+    ---+---+---
+     . | . | X
+    (use . for empty cells)
+    Problem: prints a divider after the LAST row too — can we fix that?
+    '''
+    for i in range(len(board)): # len(board) gives the number of element in the list board
+        for j in range(len(board[0])): # board[0] is a whole row. size of the row = number of columns
+            print("", board[i][j], end ="")
+            if j < (len(board[0]) - 1):
+                print(" |", end = "")
+        if i < (len(board) - 1) :
+            print("\n---+---+---")
+    print()
+    return
+
+
+def print_board_v2(board):
+    '''Print the board using a plain for loop.
+    Expected output:
+     X | . | O
+    ---+---+---
+     O | . | .
+    ---+---+---
+     . | . | X
+    (use . for empty cells)
+    '''
+    for i in range(len(board)): # len(board) gives the number of element in the list board
+        print(" " + " | ".join(board[i]))
+        if i < (len(board) - 1) :
+            print("---+---+---")
+    print()
+    return
+# join is a function of string that joins the elements of a list using a separate you specify
 # ============================================================
 # PART 4: print_board — fencepost problem + enumerate
 # ============================================================
@@ -95,19 +137,24 @@ board[1][1] ="X"
 #       print(f"row {i}: {row}")
 
 def print_board(board):
-    '''Print the board using enumerate to skip the trailing divider.
+    '''Print the board using a plain for loop.
     Expected output:
      X | . | O
     ---+---+---
      O | . | .
     ---+---+---
      . | . | X
+    (use . for empty cells)
     '''
-    # TODO: use enumerate — only print "---+---+---" when i < len(board) - 1
+    for i, row in enumerate(board): 
+        print(" " + " | ".join(row))
+        if i < (len(board) - 1) :
+            print("---+---+---")
+    print()
     return
 
 
-print("--- v0 ---")
-print_board_v0(board)
-# print("--- fixed ---")
-# print_board(board)
+# print("--- v0 ---")
+# print_board_v0(board)
+print("--- fixed ---")
+print_board(board)

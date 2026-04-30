@@ -20,18 +20,31 @@
 #       # body
 #       # MUST update something that affects the condition — or infinite loop!
 
-# Concept Test A — what does this print?
-#   x = 6
-#   while x > 4:
-#       print(x)
-#       x = x - 1
-# A. 6 5   B. 6 5 4   C. 5 4   D. 5 4 3   E. 6 5 4 3
+# This is an example of an infinite loop!!
+# while True:
+#     print("The students in cS8 are awesome!")
 
+# ch = 'g'
+# while ch != 'q':
+#     print("The students in cS8 are awesome!")
+#     ch = input("Press q to quit:")
+
+# Concept Test A — what does this print?
+x = 6
+while x > 4:
+    print(x)
+    x = x - 1
+# A. 6 5  -- correct answer! 
+# B. 6 5 4  
+# C. 5 4   
+# D. 5 4 3   
+# E. 6 5 4 3
+print("Concept B ")
 # Concept Test B — swap print and update. What prints now?
-#   x = 6
-#   while x > 4:
-#       x = x - 1
-#       print(x)
+x = 6
+while x > 4:
+    x = x - 1
+    print(x)
 # A. 6 5   B. 6 5 4   C. 5 4   D. 5 4 3   E. 6 5 4 3
 
 # Concept Test C — tricky loop with conditional inside
