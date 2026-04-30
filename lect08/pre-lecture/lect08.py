@@ -82,6 +82,35 @@ def get_valid_input_v2():
 # D. None is correct
 
 
+# --- Pattern 3: continue — skip the rest of the body for this iteration ---
+# Use continue when you want to skip some iterations but keep looping.
+# Common use: skip invalid/unwanted values without deeply nesting if/else.
+#
+# Example: print only the odd numbers from 1 to 10, skipping evens
+#
+#   x = 0
+#   while x < 10:
+#       x += 1
+#       if x % 2 == 0:
+#           continue        # skip the print, go back to the while check
+#       print(x)
+#
+# contrast with break: break exits the loop entirely
+#                      continue just skips to the next iteration
+#
+# Concept Test E — what does this print?
+#   x = 0
+#   while x < 5:
+#       x += 1
+#       if x == 3:
+#           continue
+#       print(x)
+# A. 1 2 3 4 5
+# B. 1 2 4 5
+# C. 1 2
+# D. 3 4 5
+
+
 # ============================================================
 # PART 3: RPS revisit — open rps.py
 # ============================================================
@@ -141,7 +170,7 @@ def double_all_lc(lst):
     pass
 
 
-# Concept Test E — which produces the same result as ['.', '.', '.']?
+# Concept Test F — which produces the same result as ['.', '.', '.']?
 # A. ['.'] * 3
 # B. ['.' for i in range(3)]
 # C. result = []
@@ -149,7 +178,7 @@ def double_all_lc(lst):
 # D. All of the above
 # E. None of the above
 
-# Concept Test F — which correctly initializes an empty 3x3 board?
+# Concept Test G — which correctly initializes an empty 3x3 board?
 # (goal: [['.','.','.'], ['.','.','.'], ['.','.','.']] with independent rows)
 #
 # row = ['.', '.', '.']
