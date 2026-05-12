@@ -7,13 +7,7 @@
 #   3. Build a dictionary from file data
 #   4. Use PIL to open image files
 
-import os
-import kagglehub
-# from PIL import Image
-
-path       = kagglehub.dataset_download("vishalsubbiah/pokemon-images-and-types")
-csv_file   = os.path.join(path, "pokemon.csv")
-images_dir = os.path.join(path, "images")
+# Get the Pokemon data set
 
 
 # ============================================================
