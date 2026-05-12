@@ -1,0 +1,16 @@
+species,location,count
+falcon,ellwood,3
+pelican,campus_lagoon,12
+hawk,ellwood,1
+pelican,ellwood,5
+owl,campus_lagoon,2
+hawk,campus_lagoon,4
+falcon,campus_lagoon,1
+owl,ellwood,6
+eagle,ellwood,2
+pelican,campus_lagoon,8
+hawk,ellwood,3
+eagle,campus_lagoon,1
+falcon,ellwood,2
+owl,campus_lagoon,3
+pelican,ellwood,7
