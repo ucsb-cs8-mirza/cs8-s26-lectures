@@ -44,15 +44,17 @@ def sing(P, msg):
 # 5! = 5 * 4 * 3 * 2 * 1
 # 5! = 5 * 4!          <- self-reference!
 #
-# 3-step recipe:
-#   1. What is the simplest input?
-#   2. What is the answer for the simplest input?  (base case)
-#   3. Express the answer for n in terms of n-1    (recursive case)
+# Recursive function design:
+#   1. Handle the base case           (simplest input)
+#   2. Trust recursion to do the rest (assume fac(n-1) already works)
+#   3. You do ONE step of progress    (multiply by n)
+#
+# Human: base case + 1 step.   Computer: everything else.
 
 def fac(n):
     '''Return n factorial.'''
     # TODO: base case
-    # TODO: recursive case
+    # TODO: let fac(n-1) do the heavy lifting, you just multiply by n
     pass
 
 print(fac(1))   # 1
